@@ -1,0 +1,56 @@
+.addCafe_container {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_container, .form_container2 {
+    margin-bottom: 30px;
+}
+
+.form_container label, .form_container2 label {
+    display: flex;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--main_color);
+    width: 110px;
+    margin-bottom: 5px;
+}
+
+.form_container input {
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+/* div : checkbox_container */
+.checkbox_container {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox_container label {
+    width: 130px;
+    color: black;
+    margin-left: 5px;
+}
+
+.addButton {
+    display: flex;
+    justify-content: center;
+}
+
+.addButton button {
+    margin-top: 20px;
+    width: 320px;
+    height: 30px;
+    background-color: var(--main_color);
+    border-radius: 5px;
+    color: white;
+    border: none;
+}
+
+.addButton button:hover {
+    background-color: #9d9e9de3;
+  }

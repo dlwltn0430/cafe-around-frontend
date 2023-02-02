@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "NanumSquareRound";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  /*blue: rgb(5, 112, 243)
+  green: rgb(3, 147, 37)
+  진한 초록 : 3, 101, 26 
+  */
+  --main_color: rgb(3, 101, 26);
+  /*font-family: "NanumSquareRound";*/
+}
+
+.App {
+  font-family: "NanumSquareRound";
+}
