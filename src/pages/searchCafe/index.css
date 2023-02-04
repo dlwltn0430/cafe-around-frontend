@@ -13,7 +13,7 @@
   
   .card {
     padding: 20px;
-    width: 100%;
+    width: 800px; /*100%에서 수정*/
     border: solid var(--main_color);
     margin: 10px 0;
     border-radius: 15px;

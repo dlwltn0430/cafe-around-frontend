@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './index.css';
+import axios from 'axios';
 
 export default function AddCafe() {
     const [inputs, setInputs] = useState({
@@ -22,6 +23,17 @@ export default function AddCafe() {
       const onSubmit = (e) => {
         e.preventDefault()
         console.log (name, latitude, longitude, tag);
+        
+        let form = new FormData()
+        form.append('cafeName', name);
+        form.append('latitude', latitude)
+        form.append('longitude', longitude)
+        axios.post("http://43.201.68.221:8080/api/v1/cafes", form)
+            .then(function (response) {
+                // response  
+            }).catch(function (error) {
+                // 오류발생시 실행
+            })
       }
       
       const tag_list = ['콘센트가 많은', '테이블이 넓은', '좌석이 많은', '스터디룸이 있는'];

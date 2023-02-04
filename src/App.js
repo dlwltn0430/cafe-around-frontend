@@ -9,6 +9,9 @@ import Profile from './pages/login/profile';
 import SearchCafe from './pages/searchCafe';
 import AddCafe from './pages/addCafe';
 
+//Test
+import Test from './pages/test';
+
 function App() {
   return (
     <div className='App'>
@@ -22,6 +25,9 @@ function App() {
           <Route path="/profile" element={<Profile />} />
 
           <Route path="/addCafe" element={<AddCafe />} />
+          
+          {/*Test*/}
+          <Route path="/test" element={<Test />} />
         </Routes>
       </Router>
     </div>
