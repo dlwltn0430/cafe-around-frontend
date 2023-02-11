@@ -87,12 +87,12 @@ function SearchCafe() {
             
                 return (
                   
-                    <button id={tag}
+                    <Tags id={tag}
                       className='close'
                       onClick={deleteTag(tag)}
                     >
                       {tag} &nbsp; x
-                    </button>
+                    </Tags>
                   );
             })
           : '원하는 태그를 선택해주세요!'}
@@ -106,24 +106,23 @@ function SearchCafe() {
             
                 return (
                   
-                    <button id={u}
+                    <UnivTag id={u}
                       className='close-1'
                       onClick={deleteUniv(u)}
                     >
                       {u} &nbsp; x
-                    </button>
+                    </UnivTag>
                   );
             })
           : '원하는 대학교를 선택해주세요!'}
       </div>
 
-      <ListWrapper>
         {projects
           .filter((proj) => matchUniv(proj.univ, univ))
           .filter((proj) => matchTags(proj.tags, tags))
           .map(({ id, title, address, tags, latitude, longitude, univ, price, openingHour }) => {
             return (
-              <ListCard key={id}>
+              <div className='card' key={id}>
 
               {/*<Link to = "/detail" state={{ latitude: latitude, longitude: longitude }} style={{textDecoration: 'none', color: "#000", flex: 1}}>
                 <div>
@@ -151,10 +150,10 @@ function SearchCafe() {
               <div style={{height: 'inherit'}}>
               
           
-                  <button id={univ}
+                  <UnivTag id={univ}
                     onClick={addUniv(univ)}>
-                    #{univ}
-                  </button>
+                    {univ}
+                  </UnivTag>
                 
               </div>
 
@@ -164,10 +163,9 @@ function SearchCafe() {
               상세보기
               </Link>
             
-              </ListCard>
+              </div>
             );
           })}
-      </ListWrapper>
     </div>
   );
 }
@@ -210,6 +208,27 @@ const Tags = styled.button`
   font-weight: 500;
   font-size: 1rem;
   background: #f1f3f5;
+  border-radius: 1rem;
+  text-decoration: none;
+  border: 0;
+`;
+
+const UnivTag = styled.button`
+  padding-left: 1rem;
+  padding-right: 1rem;
+  height: 2rem;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-right: 0.875rem;
+  margin-bottom: 1rem;
+  color: #f1f3f5; 
+  font-weight: 500;
+  font-size: 1rem;
+  background: #6e5eff;
   border-radius: 1rem;
   text-decoration: none;
   border: 0;

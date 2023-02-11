@@ -1,42 +1,29 @@
-.tags_container button {
-    padding: 5px;
-    background-color: var(--main_color);
-    border-radius: 5px;
-    margin: 5px;
-    color: white;
-    border: none;
-  }
-  
-  .tags_container button:hover {
-    background-color: #9d9e9de3;
-  }
-  
-  .card {
-    padding: 20px;
-    width: 800px; /*100%에서 수정*/
-    border: solid var(--main_color);
-    margin: 10px 0;
-    border-radius: 15px;
-  }
-  
-  .close {
-    border: none;
-    padding: 10px;
-    background-color: var(--main_color);
-    color: white;
-    margin: 0 10px;
-  }
-  
-  .tag-filter {
-    position: relative;
-    justify-content: center;
-    padding: 20px 10px;
-  }
-  
-  .tags_container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /*margin: 20px 300px;*/
-  }
+.card {
+  padding: 20px;
+  width: 800px; /*100%에서 수정*/
+  box-shadow: rgba(118, 117, 117, 0.5) 0px 0px 8px;
+  margin: 10px 0;
+  border-radius: 15px;
+}
+
+.close {
+  border: none;
+  padding: 10px;
+  background-color: var(--main_color);
+  color: white;
+  margin: 0 10px;
+}
+
+.tag-filter {
+  position: relative;
+  justify-content: center;
+  padding: 20px 10px;
+}
+
+.tags_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /*margin: 20px 300px;*/
+}

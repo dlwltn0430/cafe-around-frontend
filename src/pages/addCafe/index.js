@@ -3,14 +3,19 @@ import './index.css';
 import axios from 'axios';
 
 export default function AddCafe() {
+    const headers = {
+        "Content-type": "application/json;charset=UTF-8"
+    }
+
     const [inputs, setInputs] = useState({
-        name: '',
+        cafeName: '',
         latitude: '',
         longitude: '',
         tag: '',
+        cateName: '',
       });
     
-      const { name, latitude, longitude, tag } = inputs; // 비구조화 할당을 통해 값 추출
+      const { cafeName, latitude, longitude, tag, cateName } = inputs; // 비구조화 할당을 통해 값 추출
     
       const onChange = (e) => {
         const { value, name } = e.target; // 우선 e.target 에서 name 과 value 를 추출
@@ -22,18 +27,40 @@ export default function AddCafe() {
 
       const onSubmit = (e) => {
         e.preventDefault()
-        console.log (name, latitude, longitude, tag);
+        // console.log (name, latitude, longitude, tag);
         
         let form = new FormData()
-        form.append('cafeName', name);
+        console.log(inputs);
+        form.append('cafeName', cafeName)
         form.append('latitude', latitude)
         form.append('longitude', longitude)
-        axios.post("http://43.201.68.221:8080/api/v1/cafes", form)
+
+        axios.post("http://43.201.68.221:8080/api/v1/cafes", form, {headers})
             .then(function (response) {
                 // response  
+                console.log("성공");
+                console.log(response);
             }).catch(function (error) {
                 // 오류발생시 실행
+                console.log(error);
+                console.log("실패");
             })
+      }
+
+      const addCate = (e) => {
+        e.preventDefault()
+        axios.post("http://43.201.68.221:8080/api/v1/categorys",
+            {
+                name: cateName
+            },
+            {headers})
+        .then(function(response) {
+            console.log("카테고리 등록 성공")
+            console.log(response)
+        }).catch(function(error) {
+            console.log(error);
+            console.log("카테고리 등록 실패")
+        })
       }
       
       const tag_list = ['콘센트가 많은', '테이블이 넓은', '좌석이 많은', '스터디룸이 있는'];
@@ -43,7 +70,7 @@ export default function AddCafe() {
             <form onSubmit={onSubmit}>
                 <div className='form_container'>
                     <label htmlFor='form_label'>카페 이름</label>
-                    <input name="name" onChange={onChange} value={name} />
+                    <input name="cafeName" onChange={onChange} value={cafeName} />
                 </div>
 
                 <div className='form_container'>
@@ -66,7 +93,14 @@ export default function AddCafe() {
                         </div>
                     ))}
                 </div>
-                
+
+                <div className='form_container'>
+                    <label className='blue'>태그 추가하기</label>
+                    <input name="cateName" onChange={onChange} value={cateName} 
+                            style={{width: '200px'}}/>
+                    <button className='addCategory_btn'onClick={addCate}>추가</button>
+                </div>
+
                 <div className='addButton'>
                     <button type="submit">등록하기</button>
                 </div>

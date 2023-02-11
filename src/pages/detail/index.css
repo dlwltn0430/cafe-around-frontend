@@ -1,0 +1,47 @@
+.detail_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--main_color);
+    font-size: 18px;
+    font-weight: 600;
+    height: 115vh;
+}
+
+.cafe_detail label {
+    display: flex;
+    align-items: center;
+    color: black;
+    width: 9rem;
+}
+
+.cafe_detail .cafeName, .tags, .university, .price, .openingHour, .address, .map_container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.2rem;
+}
+
+.cafe_detail .tags .tag {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    margin-right: 0.875rem;
+    color: #6e5eff; 
+    font-size: 1rem;
+    background: #f1f3f5;
+    border-radius: 1rem;
+}
+
+.cafe_detail .univTag {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    color: #f1f3f5; 
+    font-size: 1rem;
+    background: #6e5eff;
+    border-radius: 1rem;
+}

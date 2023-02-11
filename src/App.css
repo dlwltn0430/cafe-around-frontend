@@ -10,8 +10,10 @@
   /*blue: rgb(5, 112, 243)
   green: rgb(3, 147, 37)
   진한 초록 : 3, 101, 26 
+
+  205, 48, 181 핑크
   */
-  --main_color: rgb(3, 101, 26);
+  --main_color: #6e5eff;
   /*font-family: "NanumSquareRound";*/
 }
 

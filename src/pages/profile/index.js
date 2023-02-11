@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import './index.css';
 
 const Profile = () => {
   const [user_id, setUserId] = useState();
@@ -11,6 +12,7 @@ const Profile = () => {
       let data = await window.Kakao.API.request({
         url: "/v2/user/me",
       });
+      console.log(data);
       // 사용자 정보 변수에 저장
       setUserId(data.id);
       setNickName(data.properties.nickname);
@@ -24,10 +26,15 @@ const Profile = () => {
     getProfile();
   }, []);
   return (
-    <div>
-      <h2>{user_id}</h2>
-      <h2>{nickName}</h2>
-      <img src={profileImage} alt="프로필 안 뜸"></img>
+    <div className="profile_container">
+      <div>
+        <div className="user_name">
+          {nickName}님, 환영합니다!
+        </div>
+        <div className="user_profile">
+          <img src={profileImage} alt="이미지 불러오기 실패"></img>
+        </div>
+      </div>
     </div>
   );
 };
