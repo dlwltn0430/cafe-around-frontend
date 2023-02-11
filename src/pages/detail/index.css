@@ -5,7 +5,7 @@
     color: var(--main_color);
     font-size: 18px;
     font-weight: 600;
-    height: 115vh;
+    margin-top: 3rem;
 }
 
 .cafe_detail label {
@@ -15,10 +15,14 @@
     width: 9rem;
 }
 
-.cafe_detail .cafeName, .tags, .university, .price, .openingHour, .address, .map_container {
+.cafe_detail .cafeName, .tags, .university, .price, .openingHour, .address{
     display: flex;
     align-items: center;
     margin-bottom: 1.2rem;
+}
+
+.cafe_detail .map_container {
+    margin-bottom: 3rem;
 }
 
 .cafe_detail .tags .tag {

@@ -80,13 +80,12 @@ function SearchCafe() {
 
   return (
     <div className='tags_container'>
-      <h1 className='tag-filter'>카페 조회하기</h1>
+      <h2 className='tag-filter'>카페 조회하기</h2>
       <div>
         {tags.length > 0
           ? tags.map((tag) => {
             
                 return (
-                  
                     <Tags id={tag}
                       className='close'
                       onClick={deleteTag(tag)}
@@ -98,14 +97,12 @@ function SearchCafe() {
           : '원하는 태그를 선택해주세요!'}
           
       </div>
-
-    {/*수정*/ }
+    
       <div>
       {univ.length > 0
           ? univ.map((u) => {
             
                 return (
-                  
                     <UnivTag id={u}
                       className='close-1'
                       onClick={deleteUniv(u)}
@@ -148,20 +145,23 @@ function SearchCafe() {
               </div>
 
               <div style={{height: 'inherit'}}>
-              
-          
                   <UnivTag id={univ}
                     onClick={addUniv(univ)}>
                     {univ}
                   </UnivTag>
+
+                  
                 
               </div>
 
-              <Link to="/detail" 
-                    state={{ title: title, address: address, tags: tags, latitude: latitude, longitude: longitude, univ: univ, price: price, openingHour: openingHour }} 
-                    style={{textDecoration: 'none', color: "#000", flex: 1}}>
-              상세보기
-              </Link>
+              <div className='detail_link'>
+                <Link to="/detail" 
+                      state={{ title: title, address: address, tags: tags, latitude: latitude, longitude: longitude, univ: univ, price: price, openingHour: openingHour }} 
+                      style={{textDecoration: 'none', color: "#000", flex: 1}}>
+                상세보기
+                </Link>
+              </div>
+
             
               </div>
             );
@@ -170,29 +170,8 @@ function SearchCafe() {
   );
 }
 
-
-const ListWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  width: 800px;
-`;
-
-const ListCard = styled.div`
-  width: 320px;
-  padding: 1rem;
-  margin: 1rem;
-
-  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 8px;
-  border-radius: 4px;
-
-
-  @media (max-width: 800px) {
-    width: 100%;
-  }
-`;
-
 const Tags = styled.button`
+  font-family: "NanumSquareRound";
   padding-left: 1rem;
   padding-right: 1rem;
   height: 2rem;
@@ -214,6 +193,7 @@ const Tags = styled.button`
 `;
 
 const UnivTag = styled.button`
+  font-family: "NanumSquareRound";  
   padding-left: 1rem;
   padding-right: 1rem;
   height: 2rem;

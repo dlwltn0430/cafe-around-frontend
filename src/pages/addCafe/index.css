@@ -2,19 +2,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    margin-top: 3rem;
 }
 
 .form_container, .form_container2 {
+    display: flex;
+    align-items: center;
     margin-bottom: 30px;
 }
 
+.label_container {
+    width: 120px;
+}
+
 .form_container label, .form_container2 label {
-    display: flex;
     font-size: 18px;
     font-weight: 600;
     color: var(--main_color);
-    width: 110px;
     margin-bottom: 5px;
 }
 
@@ -25,12 +29,14 @@
 }
 
 /* div : checkbox_container */
-.checkbox_container {
+.checkbox_container2 {
     display: flex;
     align-items: center;
 }
 
-.checkbox_container label {
+.checkbox_container2 label {
+    align-items: center;
+    height: 100%;
     width: 130px;
     color: black;
     margin-left: 5px;
@@ -53,6 +59,18 @@
     background-color: #9d9e9de3;
   }
 
+/*근처 대학교*/
+.form_container select {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    font-family: "NanumSquareRound";
+}
+
+/*주소 찾기*/
+
 /*등록하기 버튼*/
 .addButton {
     display: flex;
@@ -61,7 +79,7 @@
 
 .addButton button {
     margin-top: 2rem;
-    width: 320px;
+    width: 430px;
     height: 2.4rem;
     background-color: var(--main_color);
     border-radius: 10px;
@@ -69,6 +87,7 @@
     border: none;
     font-family: "NanumSquareRound";
     font-size: 18px;
+    margin-bottom: 3rem;
 }
 
 .addButton button:hover {
